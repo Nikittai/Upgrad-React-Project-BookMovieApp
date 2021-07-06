@@ -1,0 +1,27 @@
+#header {
+   background-color: #222;
+   height: 36px;
+   padding: 8px 8px 32px 16px;
+}
+
+#logo{
+    background-color: #ff7f7f;
+    height: 35px;
+    float: left;
+    animation: spinHorizontal 8s infinite linear;
+    
+}
+@keyframes spinHorizontal {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+#login-logout-button{
+    float: right;
+    margin-right: 20px;  
+   }
+#book-show-button{
+    float: right;
+    margin-right: 10px;
+      
+}
