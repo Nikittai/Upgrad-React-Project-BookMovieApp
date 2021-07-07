@@ -2,6 +2,7 @@ import React from 'react';
 
 import './home.css';
 import Heading from './Heading';
+import UpcomingMovies from './UpcomingMovies';
 import Header from '../../common/header/Header';
 
 
@@ -114,6 +115,7 @@ class Homepage extends React.Component {
                 <div>
 
                     <Heading />
+                    <UpcomingMovies movies={props.movies} />
                      </div>
             );
         }
@@ -126,14 +128,14 @@ class Homepage extends React.Component {
         }
     }
 
-
+  
 
     render() {
         return (
             <div>
                 <Header bookShow={this.state.bookShow} onClickHandlerBookShow={this.onClickHandlerBookShow.bind(this)} />
                 <this.ShowHomePage movies={this.state.movieList} onClickHandlerMovie={this.onClickHandlerMovie.bind(this)} onClickHandlerBack={this.onClickHandlerBack.bind(this)} movieDetail={this.state.movieDetail} artists={this.state.artists} genres={this.state.genres} />
-            </div>
+             </div>
         )
 
 
