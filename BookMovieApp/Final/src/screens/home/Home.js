@@ -2,6 +2,7 @@ import React from 'react';
 
 import './home.css';
 import Heading from './Heading';
+import ReleasedMovies from './ReleasedMovies';
 import UpcomingMovies from './UpcomingMovies';
 import Header from '../../common/header/Header';
 
@@ -116,7 +117,8 @@ class Homepage extends React.Component {
 
                     <Heading />
                     <UpcomingMovies movies={props.movies} />
-                     </div>
+                    <ReleasedMovies movies={props.movies} artists={props.artists} genres={props.genres} onClickHandlerMovie={props.onClickHandlerMovie} onClickHandlerBack={props.onClickHandlerBack} />
+                </div>
             );
         }
         else {
