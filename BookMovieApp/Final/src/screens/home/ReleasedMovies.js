@@ -1,7 +1,17 @@
 import React,{ useState }  from 'react';
 import GridListReleasedMovies from './GridListReleasedMovies';
+import './home.css';
 import { makeStyles } from '@material-ui/core/styles';
-import './home.css'
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import TextField from '@material-ui/core/TextField';
+import DatePicker from './DatePicker';
+import Genre from './Genre';
+import Artist from './Artist';
 const useStyles = makeStyles({
  
     root: {
@@ -62,7 +72,29 @@ export default function releasedMovies(props){
             <div className = 'movies'>
                 <GridListReleasedMovies movies = {props.movies} onClickHandlerMovie={props.onClickHandlerMovie} filter={movieFilter}/>
             </div>
-         </div>
+            <div className = 'filtercard'>
+            <Card className={classes.root} variant="outlined" >
+              <CardContent>
+              
+              <Typography component="div" variant="body1">
+              <Box color="primary.light">FIND MOVIES BY:</Box>
+              
+              </Typography>
+              <TextField id="standard-basic" label="Movie Name" name="title" value={movieState.title} onChange={onChangeHandler} />
+              <Genre name="genre" value={movieState.genre} onChange={onChangeHandlerGenre} genres={props.genres}/>
+              <Artist name="artists" value={movieState.artists}   onChange={onChangeHandlerArtist} artists = {props.artists}/>
+              <DatePicker val="Release Date Start"/>
+              
+              <DatePicker val="Release Date End"/>
+              </CardContent>
+              
+              <CardActions>
+                <Button id="apply-button" size="large" variant="contained" color="primary" type="button" onClick = {onClickHandler}>APPLY</Button>
+              </CardActions>
+            </Card>
+            </div>    
+            
+        </div>
 
     )
 }
