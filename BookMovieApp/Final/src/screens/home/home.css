@@ -1,0 +1,26 @@
+#heading{
+    background-color: #ff9999;
+    padding: 8px;
+    text-align: center;
+    font-size: 1rem;
+}
+.movie-list-hover:hover{
+    cursor: pointer;
+}
+.movies-filtercard{
+    display: flex;
+    margin: 26px;
+}
+.movies{
+    flex-grow: 2;
+    width : 76%;
+}
+.filtercard{
+    flex-grow: 4;
+    width : 24%;
+    margin-left:100px;
+ 
+}
+#apply-button{
+    width: 250px;
+}
