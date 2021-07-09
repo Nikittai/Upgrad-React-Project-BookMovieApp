@@ -5,6 +5,8 @@ import MovieDetails from './MovieDetails';
 import RateMovie from './RateMovie';
 import BackToHome from './BackToHome';
 import '../../common/header/Header.css';
+import BookShow from '../../screens/bookshow/BookShow';
+import Typography from '@material-ui/core/Typography';
 
 
 class Details extends React.Component {
@@ -17,7 +19,24 @@ class Details extends React.Component {
         }
     }
 
-
+    //This will display the Book Show Component if the user click Book Show button
+    BookShowComponent = function (props) {
+        if (props.bookShowComponent === false) {
+            //If bookShowComponent is false, it means this component should not be displayed
+            //Therefore returning empty div 
+            return (
+                <div></div>
+            )
+        }
+        return (
+            <div>
+                <Typography align='center' variant="h6" component="h2" id="backtohome" onClick={props.onClickHandlerBackBookShow}>
+                    &lt; Back To Movie Details
+                </Typography>
+                <BookShow baseUrl="http://localhost:8085/api/v1/" id={props.id} />
+            </div>
+        )
+    }
 
     //This method will return the movie details page
     MovieDetailsComponent = function (props) {
@@ -49,6 +68,7 @@ class Details extends React.Component {
     render() {
         return (
             <div>
+                <this.BookShowComponent bookShowComponent={this.props.bookShowComponent} id={this.props.movie.id} onClickHandlerBackBookShow={this.props.onClickHandlerBackBookShow} />
                 <this.MovieDetailsComponent {...this.props} bookShowComponent={this.props.bookShowComponent} />
 
             </div>

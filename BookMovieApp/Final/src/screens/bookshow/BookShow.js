@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Header from "../../common/header/Header";
 import Typography from "@material-ui/core/Typography";
 import "./BookShow.css";
 import Card from "@material-ui/core/Card";
@@ -11,7 +10,6 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import FormHelperText from "@material-ui/core/FormHelperText";
-import { Link } from "react-router-dom";
 
 const BookShow = (props) => {
   const [location, setLocation] = useState("");
@@ -32,11 +30,11 @@ const BookShow = (props) => {
   const [showDates, setShowDates] = useState([]);
   const [originalShows, setOriginalShows] = useState([]);
   const [showId, setShowId] = useState("");
-
+  //props.match.params.id 
   useEffect(() => {
     let dataShows = null;
 
-    fetch(props.baseUrl + "movies/" + props.match.params.id + "/shows", {
+    fetch(props.baseUrl + "movies/" + props.id + "/shows", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -166,44 +164,44 @@ const BookShow = (props) => {
       return;
     }
 
-    props.history.push({
-      pathname: "/confirm/" + props.match.params.id,
-      bookingSummary: {
-        location,
-        theatre,
-        language,
-        showDate,
-        tickets,
-        unitPrice,
-        availableTickets,
-        reqLocation,
-        reqTheatre,
-        reqLanguage,
-        reqShowDate,
-        reqTickets,
-        locations,
-        languages,
-        theatres,
-        showDates,
-        originalShows,
-        showId,
-      },
-    });
+    // props.history.push({
+    //   pathname: "/confirm/" + props.id,
+    //   bookingSummary: {
+    //     location,
+    //     theatre,
+    //     language,
+    //     showDate,
+    //     tickets,
+    //     unitPrice,
+    //     availableTickets,
+    //     reqLocation,
+    //     reqTheatre,
+    //     reqLanguage,
+    //     reqShowDate,
+    //     reqTickets,
+    //     locations,
+    //     languages,
+    //     theatres,
+    //     showDates,
+    //     originalShows,
+    //     showId,
+    //   },
+    // });
   };
 
   return (
     <div>
-      <Header baseUrl={props.baseUrl} />
+      {/* <Header baseUrl={props.baseUrl} /> */}
       <div className="bookShow">
         <Typography className="back">
-          <Link to={"/movie/" + props.match.params.id}>
+          {/* <Link to={"/movie/" + props.match.params.id}>
             &#60; Back to Movie Details
-          </Link>
+          </Link> */}
         </Typography>
 
         <Card className="cardStyle">
           <CardContent>
-            <Typography variant="headline" component="h2">
+            <Typography variant="h6" component="h2">
               BOOK SHOW
             </Typography>
             <br />
