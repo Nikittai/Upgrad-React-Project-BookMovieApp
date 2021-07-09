@@ -5,7 +5,7 @@ import Heading from './Heading';
 import ReleasedMovies from './ReleasedMovies';
 import UpcomingMovies from './UpcomingMovies';
 import Header from '../../common/header/Header';
-
+import Details from '../details/Details';
 
 
 class Homepage extends React.Component {
@@ -130,14 +130,34 @@ class Homepage extends React.Component {
         }
     }
 
-  
+    //This will display the Details page based on the movie selected by user
+    ShowDetailsPage = function (props) {
+        if (Object.keys(props.movieDetail).length === 0) {
+            //If there is no movie in the movieDetail array it means movie is not selected  by the user and homepage should be displayed
+            //Therefore returning empty div from here
+
+            return (
+                <div></div>
+            )
+        }
+        else {
+            //If there is movie in the movieDetail array it means movie is selected  by the user and details page should  be displayed
+
+            return (
+                <Details movie={props.movieDetail} onClickHandlerBack={props.onClickHandlerBack} onClickHandlerBackBookShow={props.onClickHandlerBackBookShow} bookShowComponent={props.bookShowComponent} movieid={props.movieDetail.movieid} />
+            )
+        }
+
+
+    }
 
     render() {
         return (
             <div>
                 <Header bookShow={this.state.bookShow} onClickHandlerBookShow={this.onClickHandlerBookShow.bind(this)} />
                 <this.ShowHomePage movies={this.state.movieList} onClickHandlerMovie={this.onClickHandlerMovie.bind(this)} onClickHandlerBack={this.onClickHandlerBack.bind(this)} movieDetail={this.state.movieDetail} artists={this.state.artists} genres={this.state.genres} />
-             </div>
+                <this.ShowDetailsPage bookShowComponent={this.state.bookShowComponent} onClickHandlerBack={this.onClickHandlerBack.bind(this)} onClickHandlerBackBookShow={this.onClickHandlerBackBookShow.bind(this)} movieDetail={this.state.movieDetail} />
+            </div>
         )
 
 
