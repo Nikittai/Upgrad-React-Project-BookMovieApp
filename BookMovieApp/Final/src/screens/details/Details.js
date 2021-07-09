@@ -2,6 +2,7 @@ import React from 'react';
 import './Details.css';
 import MovieImage from './MovieImage';
 import MovieDetails from './MovieDetails';
+import RateMovie from './RateMovie';
 import BackToHome from './BackToHome';
 import '../../common/header/Header.css';
 
@@ -15,6 +16,7 @@ class Details extends React.Component {
             movieid: 0
         }
     }
+
 
 
     //This method will return the movie details page
@@ -35,6 +37,9 @@ class Details extends React.Component {
                     </div>
                     <div id="details-movie-details" >
                         <MovieDetails details={props.movie} />
+                    </div>
+                    <div id="details-movie-rate">
+                        <RateMovie artists={props.movie.artists} />
                     </div>
                 </div>
             </div>
