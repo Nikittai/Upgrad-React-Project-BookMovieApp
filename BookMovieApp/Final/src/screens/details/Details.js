@@ -1,6 +1,7 @@
 import React from 'react';
 import './Details.css';
 import MovieImage from './MovieImage';
+import MovieDetails from './MovieDetails';
 import BackToHome from './BackToHome';
 import '../../common/header/Header.css';
 
@@ -31,6 +32,9 @@ class Details extends React.Component {
                 <div id="details">
                     <div >
                         <MovieImage id="details-movie-image" image={props.movie.poster_url} />
+                    </div>
+                    <div id="details-movie-details" >
+                        <MovieDetails details={props.movie} />
                     </div>
                 </div>
             </div>
