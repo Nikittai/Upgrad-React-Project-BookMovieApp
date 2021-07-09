@@ -1,8 +1,8 @@
 import React from 'react';
 import './Details.css';
+import MovieImage from './MovieImage';
 import BackToHome from './BackToHome';
 import '../../common/header/Header.css';
-
 
 
 class Details extends React.Component {
@@ -29,7 +29,9 @@ class Details extends React.Component {
             <div>
                 <BackToHome onClickHandlerBack={props.onClickHandlerBack} />
                 <div id="details">
-                    
+                    <div >
+                        <MovieImage id="details-movie-image" image={props.movie.poster_url} />
+                    </div>
                 </div>
             </div>
         )
