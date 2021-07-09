@@ -1,5 +1,6 @@
 import React from 'react';
 import './Details.css';
+import BackToHome from './BackToHome';
 import '../../common/header/Header.css';
 
 
@@ -26,6 +27,7 @@ class Details extends React.Component {
         }
         return (
             <div>
+                <BackToHome onClickHandlerBack={props.onClickHandlerBack} />
                 <div id="details">
                     
                 </div>
