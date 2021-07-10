@@ -47,7 +47,7 @@ const LoginLogoutButton = (props) => {
         //When the user is not logged in login/Register page displayed
         return (
             <span>
-                <Button id="login-logout-button" variant="contained" color="default" {...props.trigger} >
+                <Button id="login-logout-button" name="Login" variant="contained" color="default" {...props.trigger} >
                     {props.val.button_value}
                 </Button>
                 <Popover
@@ -78,7 +78,7 @@ const LoginLogoutButton = (props) => {
     else {
         //When the user is logged in button value is set to Logout and onClickHandlerlogout is called onClick
         return (
-            <Button id="login-logout-button" variant="contained" color="default" onClick={props.val.onClickHandlerlogout}>
+            <Button id="login-logout-button" name="Logout" variant="contained" color="default" onClick={props.val.onClickHandlerlogout}>
                 {props.val.button_value}
             </Button>
         )

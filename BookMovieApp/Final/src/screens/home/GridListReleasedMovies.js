@@ -72,7 +72,7 @@ export default function ImageGridList(props) {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={350} className={classes.gridList} cols={3}>
+      <GridList cellHeight={350} className={classes.gridList} cols={4} >
         {tileData.map((tile) => (
 
           <GridListTile key={tile.poster_url} cols={tile.cols || 1}>
