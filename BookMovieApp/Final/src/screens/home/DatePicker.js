@@ -21,7 +21,7 @@ export default function MaterialUIPickers(props) {
         <KeyboardDatePicker
           disableToolbar
           variant="inline"
-          format="dd-mm-yyyy"
+          format="dd-MM-yyyy"
           placeholder="dd-mm-yyyy"
           margin="normal"
           shrink="true"
